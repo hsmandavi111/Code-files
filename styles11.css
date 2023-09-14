@@ -38,7 +38,7 @@
   color: linear-gradient(to right, #a3dd96, #1b619b);
   padding: 10px;
   display: flex;
-  flex-grow: 1;
+  flex: 0 0 10%;
   height: 5%;
   align-items: center;
   border-top-left-radius: 3px;
