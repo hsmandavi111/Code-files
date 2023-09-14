@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <head>
+    <title>Chat Widget Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsmandavi111/Code-files@main/styles13.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: url("background.jpg");
+        /* background-color: #a7b8bb; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-widget">
+      <div id="chat-icon-container">
+        <img
+          src="https://drive.google.com/uc?id=1s-EUhhifBPtKGnDCpfPlPhAWVCF7EO4b"
+          alt="Chat Icon"
+          id="chat-icon"
+        />
+      </div>
+      <div id="chat-window">
+        <div id="chat-header">
+          <div class="myimg">
+            <h2>
+              <img
+                src="https://drive.google.com/uc?id=1a_KEGjZ2nkArJOZUZT6QzK0MXU00c4Ix"
+                style="height: 20px"
+              />
+            </h2>
+          </div>
+
+          <div class="language-dropdown">
+            <button
+              id="language-button"
+              class="dropbtn"
+              onclick="toggleDropdown()"
+            >
+              <span class="globe-icon">🌍</span> English
+            </button>
+            <div id="dropdown-content" class="dropdown-content">
+              <a href="#" onclick="changeLanguage('EN')">English</a>
+              <a href="#" onclick="changeLanguage('HI')">हिन्दी</a>
+              <a href="#" onclick="changeLanguage('CH')">छत्तीसगढ़ी</a>
+            </div>
+          </div>
+
+          <button id="close-button">&times;</button>
+        </div>
+        
+        <div id="chat-messages" class="chat-content"></div>
+
+        <div id="chat-input">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type your message..."
+          />
+          <!-- <button id="send-button">Send</button> -->
+          <button id="send-button" class="send-btn">
+            <i class="fa fa-paper-plane"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/hsmandavi111/Code-files@main/ES_BACKEND_V6.js"></script>
+  </body>
+</html>
