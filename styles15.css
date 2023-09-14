@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+#chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 400px;
+}
+
+#chat-icon-container {
+  width: 132px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chat-icon {
+  width: 70%;
+  height: auto;
+  cursor: pointer;
+}
+
+#chat-window {
+  z-index: 1000;
+  position: relative;
+  flex-direction: column;
+  display: none;
+  width: 500px;
+  height: 600px;
+  background-color: #eef5f4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border: 2px solid #046085;
+}
+
+#chat-header {
+  background: linear-gradient(to right, #a3dd96, #1b619b);
+  color: linear-gradient(to right, #a3dd96, #1b619b);
+  padding: 10px;
+  display: flex;
+  height: 10%;
+  align-items: center;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+#chat-header h2 {
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.myimg{
+  margin-right: 0px;
+}
+
+.lang-button {
+  border-radius: 14px;
+  margin-right: 5px;
+  margin-top: 1px;
+  margin-bottom: 4px;
+  border: 0.5px solid rgb(156, 156, 152);
+  height: 35px;
+  color: rgb(7, 7, 7);
+  margin-left: 5px;
+}
+
+.lang-button:hover {
+  border-color: #ffffff;
+  border: 0.5px solid #1d6ed8;
+  color: #1d6ed8;
+}
+
+
+#close-button {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+
+
+#chat-messages {
+  flex: 1;
+  /* height: 500px; */
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+#chat-input {
+  padding: 3px;
+  margin-top: 0;
+  display: flex;
+  border-top: 1px solid #ccc;
+  height: 10px;
+  /* flex-grow: 1; */
+}
+
+ #chat-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 100%;
+  margin-left: 1px;
+}
+
+#chat-input button {
+  border: none;
+  background-color: #4285f4;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+#chat-input .send-btn {
+  border: none;
+  background-color: #18698f;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#chat-input .send-btn i {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#chat-input .send-btn i.fa-paper-plane {
+  flex: 1;
+  color: white;
+  font-size: 18px;
+} 
+
+.user-message {
+  text-align: right;
+  background-color: #3a7891;
+  border-radius: 3px;
+  margin-top: 10px;
+  float: right;
+  clear: both;
+  padding: 2px 2px 2px 2px;
+  font-family: Segoe UI;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.user-text {
+  padding: 4px;
+}
+
+.bot-message {
+  text-align: left;
+  background-color: #f5f9fa;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-left: 5px;
+  float: left;
+  clear: both;
+  padding: 5px 7px;
+  font-family: Segoe UI;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.bot-message .link-box {
+  text-align: left;
+  background-color: #ffffff;
+  border-radius: 3px;
+  margin-top: 5px;
+  margin-left: 8px;
+  float: left;
+  clear: both;
+  padding: 5px 7px;
+}
+
+.chat-content {
+  /* flex:  1; */
+  height: 300px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.line-icon {
+  color: #1b619b;
+  width: 5px;
+}
+
+.li::before {
+  counter-increment: item;
+  content: counter(item) ". ";
+}
+
+.external-link-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.button-rectangle {
+  flex: 1;
+  display: inline-block;
+  padding: 12px 3px;
+  font-size: 16px;
+  border: 1px solid rgb(12, 174, 228);
+  background-color: rgb(255, 255, 255);
+  color: rgb(11, 102, 240);
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.button-rectangle:hover {
+  background-color: rgb(11, 105, 182);
+  color: rgb(255, 255, 255);
+}
+
+.crop-parent {
+  margin-top: 10px;
+  margin-left: 5px;
+  float: left;
+  clear: both;
+  position: relative;
+  display: flex;
+}
+
+.crop-message {
+  text-align: center;
+  text-align: left;
+  background-color: #f5f9fa;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-left: 5px;
+  float: left;
+  clear: both;
+  padding: 5px 7px;
+  font-family: Segoe UI;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.crop-message img {
+  display: block;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.text-buttons-container {
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f5f9fa;
+  border-radius: 0 5px 5px 0;
+  margin-left: 5px;
+  margin-top: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-row {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f5f9fa;
+  border-radius: 0 5px 5px 0;
+  margin-top: 10px;
+}
+
+
+
+.crop-button {
+  display: block;
+  width: 87%;
+  padding: 12px 16px;
+  font-size: 16px;
+  background: linear-gradient(to right, #a3dd96, #1b619b);
+  color: #f8f8f8;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 0 0 5px 5px;
+  margin-top: -5px;
+}
+
+.crop-button:hover {
+  color: #1a1818;
+  border-color: #3a8de0;
+  background: linear-gradient(to right, #77d661, #025196);
+}
+
+.chip-button {
+  border-radius: 14px;
+  margin-right: 5px;
+  margin-top: 4px;
+  border: 0.5px solid rgb(156, 156, 152);
+  height: 35px;
+  color: rgb(7, 7, 7);
+}
+
+.chip-button:hover {
+  border-color: #ffffff;
+  border: 0.5px solid #1d6ed8;
+  color: #1d6ed8;
+}
+
+.gif-style {
+  text-align: left;
+  background-color: #f5f9fa;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-left: 5px;
+  float: left;
+  clear: both;
+  padding: 5px 7px;
+}
+
+.dot-container {
+  display: flex;
+  text-align: left;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-left: 5px;
+  float: left;
+  clear: both;
+  padding: 5px 7px;
+}
+
+.dot {
+  width: 19px;
+  height: 19px;
+  border-radius: 15px;
+  background-color: #a3dd96;
+  margin-right: 10px;
+  animation: blinkAnimation 1.5s infinite;
+}
+
+@keyframes blinkAnimation {
+  0%, 100% {
+    background-color: #a3dd96;
+  }
+  50% {
+    background-color: #1b619b;
+  }
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.user-role {
+  text-align: right;
+  margin-top: 10px;
+  float: right;
+  clear: both;
+  font-family: Segoe UI;
+  color: rgb(29, 31, 31);
+}
+
+.bot-role {
+  text-align: left;
+  margin-top: 10px;
+  float: left;
+  clear: both;
+  padding: 4px;
+  font-family: Segoe UI;
+  color: rgb(32, 29, 29);
+}
+
+
+/* <<<<========dropdown lang==========>>>>>>> */
+
+/* Style the dropdown button */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Dropdown container */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Dropdown options */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+
+/* <<<<<<======header style=========>>>>>>> */
+
+
+.language-dropdown {
+  margin-left: 40px; /* Adjust the margin as needed */
+}
+
+.language-dropdown .dropbtn {
+  padding: 0px 0px;
+  display: inline-flex; /* Display the button as an inline flex container */
+  align-items: center;
+}
+
+
+
+.closebutton{
+ /* margin-left: 218px; */
+ margin-right: -100px;
+ align-self: flex-start;
+}
