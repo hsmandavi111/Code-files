@@ -178,7 +178,7 @@ function welcome() {
   const intbutton = document.createElement("a");
   intimg.src =
     "https://www.cropway.com/wp-content/uploads/2021/10/Upper-image-1.png";
-  intimg.height = 180;
+//   intimg.height = 180;
   intro.appendChild(intimg);
   intro.classList.add("crop-message");
   intbutton.classList.add("crop-button");
