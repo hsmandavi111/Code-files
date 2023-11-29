@@ -25,10 +25,10 @@
   position: relative;
   flex-direction: column;
   display: none;
-  /* width: 490px; */
-  /* height: 550px; */
-  width: 38%;
-  height: 80%;
+  width: 490px;
+  height: 550px;
+/*   width: 38%;
+  height: 80%; */
   background-color: #eef5f4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
