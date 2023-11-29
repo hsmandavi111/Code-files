@@ -2,8 +2,10 @@
 
 #chat-widget {
   position: fixed;
+/*   bottom: 20px;
+  right: 20px; */
   bottom: 20px;
-  right: 20px;
+  right: 60px;
 }
 
 #chat-icon-container {
