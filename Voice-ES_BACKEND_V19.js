@@ -1,4 +1,5 @@
 // const { text } = require("cheerio/lib/api/manipulation");
+const address = 'https://chatbot-backend-db-6xc3zngpyq-el.a.run.app'
 const port = 8000;
 const gptport = 8000;
 let openfirsttime = true;
@@ -9,19 +10,23 @@ let curentlang = "English";
 let user_data;
 
 window.onload = function () {
-  const user_name = u_name;
-  const user_last_name = lastname;
-  const mob = mobile;
-  user_data = { username: user_name, last_name: user_last_name, mobile: mob };
+  user_data = {
+    username: username,
+    lastname: lastname,
+    mobile: mobile,
+    email: email,
+    role: role,
+  };
 };
 
-user_data = {
-  username: u_name,
-  lastname: lastname,
-  mobile: mobile,
-  email: email,
-  role: role,
-};
+
+
+// const userId = '123'; 
+// const ws = new WebSocket(`ws://${address}`); 
+// ws.onopen = () => {
+//   console.log('Connected to server');
+//   ws.send(JSON.stringify({ type: 'userId', userId }));
+// };
 
 // <<<<=====Local server address=====>>>>>>
 
@@ -45,14 +50,13 @@ user_data = {
 
 //<<<<<<<<<<<<<==== DB FEATURED BACKEND LINKS=========>>>>>>.
 
-const textospeechurl  = "https://chatbot-backend-db-6xc3zngpyq-el.a.run.app/tts";
-const speechtotexturl = "https://chatbot-backend-db-6xc3zngpyq-el.a.run.app/stt";
+const textospeechurl  = `${address}/tts`;
+const speechtotexturl = `${address}/stt`;
 
-const fetchaddress = `https://chatbot-backend-db-6xc3zngpyq-el.a.run.app/dialogflow/rest/text`;
-let newfetchaddress = `https://chatbot-backend-db-6xc3zngpyq-el.a.run.app/dialogflow/rest/text`;
-const gptfetchaddress = "https://chatbot-backend-db-6xc3zngpyq-el.a.run.app/dialogflow/rest/gpt";
-
-const trackaddress = `https://chatbot-backend-db-6xc3zngpyq-el.a.run.app/dialogflow/rest/track`;
+const fetchaddress = `${address}/dialogflow/rest/text`;
+let newfetchaddress = `${address}/dialogflow/rest/text`;
+const gptfetchaddress = `${address}/dialogflow/rest/gpt`;
+const trackaddress = `${address}/dialogflow/rest/track`;
 
 
 // Get DOM elements
@@ -343,21 +347,32 @@ function toggleChatWindow() {
     languageDropdownDiv.appendChild(buttonElement);
     languageDropdownDiv.appendChild(dropdownContentDiv);
 
-    fetch(`${trackaddress}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user_data),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log("<<<<<<<===result===>>>>>>>");
-        console.log(result);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    const ws = new WebSocket('wss://chatbot-backend-db-6xc3zngpyq-el.a.run.app'); // WebSocket connection to server
+
+    // Event handler for successful connection
+    ws.onopen = () => {
+      console.log('Connected to server');
+      // Send user ID to server
+      ws.send(JSON.stringify({ type: 'userdata', user_data }));
+    };
+
+    // fetch(`${trackaddress}`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(user_data),
+    // })
+    //   .then((response) => response.json())
+    //   .then((result) => {
+    //     console.log("<<<<<<<===result===>>>>>>>");
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
+
+
   }
 
   chatIcon.style.display = "none"; // Hide the chat icon
